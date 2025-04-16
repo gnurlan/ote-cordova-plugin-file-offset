@@ -1,0 +1,23 @@
+{
+  "name": "ote-cordova-plugin-file-offset",
+  "version": "1.0.0",
+  "description": "Cordova plugin to write data at specific offsets in files (especially for MP4 metadata)",
+  "cordova": {
+    "id": "ote-cordova-plugin-file-offset",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "file",
+    "offset",
+    "mp4",
+    "metadata",
+    "ecosystem:cordova"
+  ],
+  "engines": {},
+  "author": "OTE App Team",
+  "license": "MIT"
+}

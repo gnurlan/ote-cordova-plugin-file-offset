@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="ote-cordova-plugin-file-offset"
+        version="1.0.0">
+
+    <name>OTE File Offset Writer</name>
+    <description>Cordova plugin to write data at specific offsets in files (especially for MP4 metadata)</description>
+    <license>MIT</license>
+    <keywords>cordova,file,offset,mp4,metadata,duration</keywords>
+
+    <js-module src="www/FileOffset.js" name="FileOffset">
+        <clobbers target="cordova.plugins.fileOffset" />
+    </js-module>
+
+    <!-- Android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FileOffset">
+                <param name="android-package" value="org.ote.cordova.FileOffset" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/FileOffset.java" target-dir="src/org/ote/cordova" />
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FileOffset">
+                <param name="ios-package" value="CDVFileOffset" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVFileOffset.h" />
+        <source-file src="src/ios/CDVFileOffset.m" />
+    </platform>
+</plugin>
