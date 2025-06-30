@@ -13,11 +13,6 @@
         NSError* error = nil;
 
         @try {
-            // Convert file:// URL to native path if needed
-            if ([path hasPrefix:@"file://"]) {
-                path = [path substringFromIndex:7];
-            }
-
             NSFileHandle* fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:path];
             if (fileHandle == nil) {
                 result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR

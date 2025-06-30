@@ -58,6 +58,12 @@ var FileOffset = {
                 .then(resolve)
                 .catch(reject);
         });
+    },
+
+    rewriteWithHeader: function(originalFilePath, headerFilePath, clusterOffset) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, 'FileOffset', 'rewriteWithHeader', [originalFilePath, headerFilePath, clusterOffset]);
+        });
     }
 };
 
